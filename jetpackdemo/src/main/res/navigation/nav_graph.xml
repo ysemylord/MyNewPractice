@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/blankFragment1">
+
+    <action
+        android:id="@+id/action_global_globaleActionFragment"
+        app:destination="@id/globaleActionFragment" />
+
+
+    <fragment
+        android:id="@+id/blankFragment1"
+        android:name="com.example.jetpackdemo.BlankFragment1"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank">
+        <action
+            android:id="@+id/action_blankFragment1_to_blankFragment2"
+            app:destination="@id/blankFragment2" />
+        <action
+            android:id="@+id/action_blankFragment1_to_safeArgsFragment"
+            app:destination="@id/safeArgsFragment">
+            <argument
+                android:name="name"
+                app:argType="string" />
+        </action>
+        <action
+            android:id="@+id/action_blankFragment1_to_roomDemoFragment"
+            app:destination="@id/roomDemoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blankFragment2"
+        android:name="com.example.jetpackdemo.BlankFragment2"
+        android:label="fragment_blank2"
+        tools:layout="@layout/fragment_blank2" />
+    <fragment
+        android:id="@+id/globaleActionFragment"
+        android:name="com.example.jetpackdemo.GlobaleActionFragment"
+        android:label="fragment_blank3"
+        tools:layout="@layout/fragment_blank3" />
+    <fragment
+        android:id="@+id/safeArgsFragment"
+        android:name="com.example.jetpackdemo.SafeArgsFragment"
+        android:label="fragment_safe_args"
+        tools:layout="@layout/fragment_safe_args">
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/roomDemoFragment"
+        android:name="com.example.jetpackdemo.room_demo.RoomDemoFragment"
+        android:label="fragment_room_demo"
+        tools:layout="@layout/fragment_room_demo" />
+
+</navigation>

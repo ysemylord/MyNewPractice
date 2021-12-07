@@ -1,0 +1,20 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+    }
+}
+rootProject.name = "My Application"
+include ':app'
+include ':lib'
+include ':otherapplication'
+include ':myaidlService'
+include ':myaidlclient'
+include ':textviewdemo'
+include ':screeninfodemo'
+include ':dialogdemo'
+include ':jetpackdemo'
+include ':app:serializabledemo'
+include ':networkapplication'
