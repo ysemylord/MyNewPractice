@@ -1,4 +1,3 @@
-/*
 package com.example.jetpackdemo.room_demo.dao
 
 import androidx.lifecycle.LiveData
@@ -27,4 +26,4 @@ interface SleepDatabaseDao {
 
     @Query("SELECT * FROM daily_sleep_quality_table ORDER BY nightId DESC")
     fun getAllNights(): LiveData<List<SleepNight>>
-}*/
+}

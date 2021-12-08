@@ -8,6 +8,7 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin
 import org.koin.core.logger.Level
 import org.koin.core.qualifier.named
+import org.koin.dsl.bind
 import org.koin.dsl.module
 
 class MyApplication : Application() {
@@ -15,7 +16,7 @@ class MyApplication : Application() {
         factory {
             //每次会创建新的
             Person()
-        }
+        } bind Animation::class
         single { //单例
             UserData()
         }
@@ -39,7 +40,6 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         startKoin {
-            androidLogger(Level.INFO)
             androidContext(this@MyApplication)
             modules(appModule)
         }

@@ -12,7 +12,6 @@ import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import java.io.IOException
-/*
 @RunWith(AndroidJUnit4::class)
 
 class SleepDatabaseTest {
@@ -44,6 +43,6 @@ class SleepDatabaseTest {
         val night = SleepNight(0,1,2,2)
         sleepDao.insert(night)
         val tonight = sleepDao.getTonight()
-        assertEquals(tonight?.sleepQuality, -1)
+        assertEquals(tonight?.sleepQuality, 2)
     }
-}*/
+}

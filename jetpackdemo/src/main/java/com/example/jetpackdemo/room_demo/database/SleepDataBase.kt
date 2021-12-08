@@ -1,4 +1,3 @@
-/*
 package com.example.jetpackdemo.room_demo.database
 
 import android.content.Context
@@ -10,7 +9,8 @@ import com.example.jetpackdemo.room_demo.dao.SleepDatabaseDao
 
 @Database(entities = [SleepNight::class], version = 1, exportSchema = false)
 abstract class SleepDataBase : RoomDatabase() {
-    abstract val sleepDatabaseDao: SleepDatabaseDao
+    abstract val  sleepDatabaseDao: SleepDatabaseDao
+
     companion object {
         @Volatile
         private var INSTANCE: SleepDataBase? = null
@@ -38,4 +38,4 @@ abstract class SleepDataBase : RoomDatabase() {
         }
     }
 
-}*/
+}

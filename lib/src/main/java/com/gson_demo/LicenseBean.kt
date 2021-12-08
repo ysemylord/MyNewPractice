@@ -13,13 +13,14 @@ data class LicenseBean(
     val name: String,
     val spdx_id: String,
     val url: String,
-    val node_id: String
+    val node_id: String,
+    val real: Boolean
 )
 
 fun main() {
-   // baseUse()
+    baseUse()
 
-    testEmpty()
+    // testEmpty()
 }
 
 private fun testEmpty() {
@@ -30,7 +31,7 @@ private fun testEmpty() {
     while (bufferedReader.readLine().apply { line = this } != null) {
         sb.append(line).append("\n")
     }
-    val result:Result = Gson().fromJson(sb.toString(), Result::class.java)
+    val result: Result = Gson().fromJson(sb.toString(), Result::class.java)
 
     print("bean: $result")
     print("bean: ${result.code}")

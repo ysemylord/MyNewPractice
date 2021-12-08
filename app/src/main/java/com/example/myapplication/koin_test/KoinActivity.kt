@@ -24,6 +24,7 @@ class KoinActivity : AppCompatActivity() {
         val person2 by inject<Person>()
         val person3 by inject<Person>()
         val person: Person = get()
+        val animation:Animation = get()
         person1.speak()
         person2.speak()
         person3.speak()
