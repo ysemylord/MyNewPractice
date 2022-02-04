@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TextViewDemo</string>
+    <string name="title">Pay Page</string>
 </resources>

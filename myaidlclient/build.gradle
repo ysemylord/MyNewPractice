@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 27
 
     defaultConfig {
         applicationId "com.example.maidlclient"
         minSdk 21
-        targetSdk 31
+        targetSdk 27
         versionCode 1
         versionName "1.0"
 

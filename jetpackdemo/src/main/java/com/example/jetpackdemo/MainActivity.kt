@@ -1,18 +1,30 @@
 package com.example.jetpackdemo
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
+import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 
 class MainActivity : AppCompatActivity() {
-
+    lateinit var et: EditText
     override fun onCreate(savedInstanceState: Bundle?) {
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        nave()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+
     }
 
     /**

@@ -7,11 +7,13 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app/serializabledemo" />
+            <option value="$PROJECT_DIR$/customview" />
             <option value="$PROJECT_DIR$/dialogdemo" />
             <option value="$PROJECT_DIR$/jetpackdemo" />
             <option value="$PROJECT_DIR$/lib" />

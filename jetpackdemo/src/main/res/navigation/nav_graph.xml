@@ -28,6 +28,18 @@
         <action
             android:id="@+id/action_blankFragment1_to_roomDemoFragment"
             app:destination="@id/roomDemoFragment" />
+        <action
+            android:id="@+id/action_blankFragment1_to_nestedScrollFragment"
+            app:destination="@id/nestedScrollFragment" />
+        <action
+            android:id="@+id/action_blankFragment1_to_dispatchTouchEventFragment"
+            app:destination="@id/dispatchTouchEventFragment" />
+        <action
+            android:id="@+id/action_blankFragment1_to_drawFragment"
+            app:destination="@id/drawFragment" />
+        <action
+            android:id="@+id/action_blankFragment1_to_drawFinishFragment"
+            app:destination="@id/drawFinishFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -53,5 +65,25 @@
         android:name="com.example.jetpackdemo.room_demo.RoomDemoFragment"
         android:label="fragment_room_demo"
         tools:layout="@layout/fragment_room_demo" />
+    <fragment
+        android:id="@+id/nestedScrollFragment"
+        android:name="com.example.jetpackdemo.advance_ui.NestedScrollFragment"
+        android:label="fragment_nested_scroll"
+        tools:layout="@layout/fragment_nested_scroll" />
+    <fragment
+        android:id="@+id/dispatchTouchEventFragment"
+        android:name="com.example.jetpackdemo.advance_ui.dispatch_touch_event.innter.DispatchTouchEventOuterFragment"
+        android:label="fragment_dispatch_touch_event"
+        tools:layout="@layout/fragment_dispatch_touch_event" />
+    <fragment
+        android:id="@+id/drawFragment"
+        android:name="com.example.jetpackdemo.advance_ui.draw_text_gradient.DrawFragment"
+        android:label="fragment_draw"
+        tools:layout="@layout/fragment_draw" />
+    <fragment
+        android:id="@+id/drawFinishFragment"
+        android:name="com.example.jetpackdemo.advance_ui.draw_fish.DrawFinishFragment"
+        android:label="fragment_draw_finish"
+        tools:layout="@layout/fragment_draw_finish" />
 
 </navigation>

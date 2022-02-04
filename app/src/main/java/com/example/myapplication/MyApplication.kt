@@ -1,6 +1,9 @@
 package com.example.myapplication
 
 import android.app.Application
+import android.content.Context
+import android.content.Intent
+import androidx.multidex.MultiDex
 import com.example.myapplication.koin_test.*
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -12,11 +15,20 @@ import org.koin.dsl.bind
 import org.koin.dsl.module
 
 class MyApplication : Application() {
+
+   companion object{
+        fun start(context: Context){
+            
+        }
+   }
+
+
     private val appModule = module {
         factory {
             //每次会创建新的
             Person()
         } bind Animation::class
+
         single { //单例
             UserData()
         }
@@ -45,5 +57,9 @@ class MyApplication : Application() {
         }
     }
 
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this);
 
+    }
 }

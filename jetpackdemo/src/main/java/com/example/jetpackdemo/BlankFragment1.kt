@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -50,6 +51,24 @@ class BlankFragment1 : Fragment() {
             val action = BlankFragment1Directions.actionBlankFragment1ToRoomDemoFragment()
             it.findNavController().navigate(action)
         }
+
+        inflate?.findViewById<View>(R.id.to_dispatch_touch_event_fragment)?.setOnClickListener {
+            val action = BlankFragment1Directions.actionBlankFragment1ToDispatchTouchEventFragment()
+            it.findNavController().navigate(action)
+        }
+
+        inflate?.findViewById<View>(R.id.to_draw_fragment)?.setOnClickListener {
+            val action = BlankFragment1Directions.actionBlankFragment1ToDrawFragment()
+            it.findNavController().navigate(action)
+        }
+
+        inflate?.findViewById<View>(R.id.to_draw_finish_fragment)?.setOnClickListener {
+            val action = BlankFragment1Directions.actionBlankFragment1ToDrawFinishFragment()
+            it.findNavController().navigate(action)
+        }
+
+        val action = BlankFragment1Directions.actionBlankFragment1ToDrawFinishFragment()
+        findNavController().navigate(action)
 
         return inflate
     }

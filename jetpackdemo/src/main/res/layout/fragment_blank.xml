@@ -43,10 +43,45 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_to_fragment2" />
 
     <Button
+        android:id="@+id/to_room"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/to_room"
         android:text="toRoom"
         app:layout_constraintStart_toStartOf="@+id/test_safe_args"
         app:layout_constraintTop_toBottomOf="@+id/test_safe_args" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@+id/init_textView"
+        app:layout_constraintTop_toBottomOf="@+id/init_textView">
+
+        <Button
+            android:id="@+id/to_nested_scroll_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(二级联动)嵌套滑动" />
+
+        <Button
+            android:id="@+id/to_dispatch_touch_event_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="分发事件" />
+
+        <Button
+            android:id="@+id/to_draw_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绘制文字和文字渐变" />
+
+        <Button
+            android:id="@+id/to_draw_finish_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="绘制鱼(综合练习)" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>
