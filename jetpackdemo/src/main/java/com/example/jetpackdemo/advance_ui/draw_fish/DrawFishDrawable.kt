@@ -18,7 +18,7 @@ class DrawFishDrawable : Drawable() {
         alpha = 125
     }
 
-    val head_radius = 30f//头的半径
+    val head_radius = 60f//头的半径
 
     val body_length = 3.2 * head_radius
 

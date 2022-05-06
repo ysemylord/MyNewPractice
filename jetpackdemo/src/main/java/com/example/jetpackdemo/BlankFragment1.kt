@@ -66,8 +66,17 @@ class BlankFragment1 : Fragment() {
             val action = BlankFragment1Directions.actionBlankFragment1ToDrawFinishFragment()
             it.findNavController().navigate(action)
         }
+        inflate?.findViewById<View>(R.id.to_fixed_top_recycler_view)?.setOnClickListener {
+            val action = BlankFragment1Directions.actionBlankFragment1ToFixedTopRecyclerViewFragment()
+            it.findNavController().navigate(action)
+        }
 
-        val action = BlankFragment1Directions.actionBlankFragment1ToDrawFinishFragment()
+        inflate?.findViewById<View>(R.id.to_span_string_view)?.setOnClickListener {
+            val action = BlankFragment1Directions.actionBlankFragment1ToSpanStringDemoFragment()
+            it.findNavController().navigate(action)
+        }
+
+        val action = BlankFragment1Directions.actionBlankFragment1ToSpanStringDemoFragment()
         findNavController().navigate(action)
 
         return inflate

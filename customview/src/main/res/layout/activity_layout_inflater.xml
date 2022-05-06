@@ -9,21 +9,21 @@
     <com.example.customview.MyLayoutInflaterFactory.InflaterTagView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hello"
-        android:hint="@string/hint"
-        android:drawableBottom="@drawable/ic_launcher_background"
-        android:textColor="@color/black"
         android:background="#FF018786"
+        android:drawableBottom="@drawable/ic_launcher_background"
+        android:hint="@string/hint"
+        android:text="hello"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@color/black"
+        android:text="jackjackjackjack"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

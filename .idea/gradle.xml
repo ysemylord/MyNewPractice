@@ -15,6 +15,10 @@
             <option value="$PROJECT_DIR$/app/serializabledemo" />
             <option value="$PROJECT_DIR$/customview" />
             <option value="$PROJECT_DIR$/dialogdemo" />
+            <option value="$PROJECT_DIR$/emptyapplication" />
+            <option value="$PROJECT_DIR$/fileproviderclientapplication" />
+            <option value="$PROJECT_DIR$/fileproviderserverapplication" />
+            <option value="$PROJECT_DIR$/hookactivityapplication" />
             <option value="$PROJECT_DIR$/jetpackdemo" />
             <option value="$PROJECT_DIR$/lib" />
             <option value="$PROJECT_DIR$/myaidlService" />
@@ -22,6 +26,7 @@
             <option value="$PROJECT_DIR$/networkapplication" />
             <option value="$PROJECT_DIR$/otherapplication" />
             <option value="$PROJECT_DIR$/screeninfodemo" />
+            <option value="$PROJECT_DIR$/testaidlapplication" />
             <option value="$PROJECT_DIR$/textviewdemo" />
           </set>
         </option>

@@ -40,6 +40,12 @@
         <action
             android:id="@+id/action_blankFragment1_to_drawFinishFragment"
             app:destination="@id/drawFinishFragment" />
+        <action
+            android:id="@+id/action_blankFragment1_to_fixedTopRecyclerViewFragment"
+            app:destination="@id/fixedTopRecyclerViewFragment" />
+        <action
+            android:id="@+id/action_blankFragment1_to_spanStringDemoFragment"
+            app:destination="@id/spanStringDemoFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -85,5 +91,14 @@
         android:name="com.example.jetpackdemo.advance_ui.draw_fish.DrawFinishFragment"
         android:label="fragment_draw_finish"
         tools:layout="@layout/fragment_draw_finish" />
+    <fragment
+        android:id="@+id/fixedTopRecyclerViewFragment"
+        android:name="com.example.jetpackdemo.advance_ui.recyclerview_top.FixedTopRecyclerViewFragment"
+        android:label="fragment_fixed_top_recycler_view"
+        tools:layout="@layout/fragment_fixed_top_recycler_view" />
+    <fragment
+        android:id="@+id/spanStringDemoFragment"
+        android:name="com.example.jetpackdemo.advance_ui.span_string.SpanStringDemoFragment"
+        android:label="SpanStringDemoFragment" />
 
 </navigation>
