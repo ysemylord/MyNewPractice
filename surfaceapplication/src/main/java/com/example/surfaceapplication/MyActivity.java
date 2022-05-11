@@ -23,7 +23,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 public class MyActivity extends AppCompatActivity {
 
     private SurfaceView svDecode;
-    private PaintView svEncode;
+    //private PaintView svEncode;
+    private MyTextView svEncode;
     private MediaCodec mediaCodec, mediaDecode;
     private Surface inputSurface;
     private Button stop;
@@ -70,7 +71,14 @@ public class MyActivity extends AppCompatActivity {
             }
         });
 
-        svEncode.getHolder().addCallback(new SurfaceHolder.Callback() {
+        svEncode.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                encode();//开始编码
+            }
+        },5000);
+
+      /*  svEncode.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
             public void surfaceCreated(SurfaceHolder surfaceHolder) {
                 Log.i(TAG, "surfaceCreated: ");
@@ -85,7 +93,7 @@ public class MyActivity extends AppCompatActivity {
             @Override
             public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
             }
-        });
+        });*/
 
         svDecode.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
@@ -174,6 +182,7 @@ public class MyActivity extends AppCompatActivity {
                         length = dataSource.length;
                     }
                     mediaDecode.queueInputBuffer(i, 0, length, 0, 0);
+                    Log.i("mediaDecode","onInputBufferAvailable");
 
                 }
 
