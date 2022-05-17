@@ -17,6 +17,9 @@ import android.widget.Button;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -31,6 +34,7 @@ public class MyActivity extends AppCompatActivity {
     private String TAG = "yforyoung";
     private final static ArrayBlockingQueue<byte[]> mOutputDataQueue = new ArrayBlockingQueue<>(8);
     private MediaFormat mediaFormat = MediaFormat.createVideoFormat("video/avc", 640, 480);
+    private BufferedOutputStream outputStream;
 
 
     @TargetApi(Build.VERSION_CODES.M)
@@ -38,6 +42,16 @@ public class MyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        File file = new File(getFilesDir(),"mediacodecDemo.h264");
+        if(file.exists()){
+            file.delete();
+        }
+        try {
+            outputStream = new BufferedOutputStream(new FileOutputStream(file));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
         init();
     }
 
@@ -128,27 +142,67 @@ public class MyActivity extends AppCompatActivity {
 
 
         mediaCodec.setCallback(new MediaCodec.Callback() {
+            private long mFramerate=30;
+            private int TIMEOUT_TIME = 10000;
+            public byte[] mFirstFrameConfig;
+
+
             @Override
             public void onInputBufferAvailable(MediaCodec codec, int index) {
             }
-
+            private long computePresentationTime(long frameIndex) {
+                return 132 + frameIndex * 1000000 / mFramerate;
+            }
             @Override
             public void onOutputBufferAvailable(MediaCodec codec, int index, MediaCodec.BufferInfo info) {
                 ByteBuffer outputBuffer = codec.getOutputBuffer(index);
                 //这里将编码后的流存入byte[]队列，也可以在这里将画面输出到文件或者发送到远端
                 if (outputBuffer != null && info.size > 0) {
-                    byte[] buffer = new byte[outputBuffer.remaining()];
-                    outputBuffer.get(buffer);
-                    boolean result = mOutputDataQueue.offer(buffer);
-                    Log.i(TAG, "onOutputBufferAvailable: offer");
-                    if (!result) {
-                        Log.e(TAG, "onOutputBufferAvailable: offer to queue failed");
+                    byte[] outData = new byte[outputBuffer.remaining()];
+                    outputBuffer.get(outData);
+
+
+                    				/*H264编码首帧，内部存有SPS和PPS信息，需要保留起来，然后，加在每个H264关键帧的前面。
+							* 其中有个字段是flags，它有几种常量情况。
+								flags = 4；End of Stream。
+								flags = 2；首帧信息帧。
+								flags = 1；关键帧。
+								flags = 0；普通帧。*/
+                    MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
+                    int outputBufferIndex = codec.dequeueOutputBuffer(bufferInfo, TIMEOUT_TIME);
+
+                    while (outputBufferIndex >= 0) {
+
+
+                        if (bufferInfo.flags == 2) {//首帧，记录信息
+                            mFirstFrameConfig = new byte[bufferInfo.size];
+                            mFirstFrameConfig = outData;
+                        } else if (bufferInfo.flags == 1) {
+                            byte[] keyframe = new byte[bufferInfo.size + mFirstFrameConfig.length];
+                            System.arraycopy(mFirstFrameConfig, 0, keyframe, 0, mFirstFrameConfig.length);
+                            System.arraycopy(outData, 0, keyframe, mFirstFrameConfig.length, outData.length);
+
+                            try {
+                                outputStream.write(keyframe, 0, keyframe.length);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            try {
+                                outputStream.write(outData, 0, outData.length);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        codec.releaseOutputBuffer(outputBufferIndex, false);
+                        outputBufferIndex = codec.dequeueOutputBuffer(bufferInfo, TIMEOUT_TIME);
+
                     }
                 }
-                codec.releaseOutputBuffer(index, false);
-                if ((info.flags & MediaCodec.BUFFER_FLAG_END_OF_STREAM) != 0) {
-                    mediaCodec.release();
-                }
+
+
+
             }
 
             @Override
