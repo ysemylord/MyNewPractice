@@ -17,6 +17,7 @@
       <module name="My_Application.networkapplication" target="11" />
       <module name="My_Application.otherapplication" target="11" />
       <module name="My_Application.screeninfodemo" target="11" />
+      <module name="My_Application.servicedemoapplication" target="11" />
       <module name="My_Application.surfaceapplication" target="11" />
       <module name="My_Application.testAIDL" target="11" />
       <module name="My_Application.testaidlapplication" target="11" />

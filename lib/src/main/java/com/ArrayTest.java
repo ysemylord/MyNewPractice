@@ -7,7 +7,6 @@ public class ArrayTest {
     public static void main(String[] args) {
 
 
-
         int[][] blocks = {{2, 3, 3}, {4, 5, 2}, {3, 4, 2}, {0, 1, 4}, {1, 3, 3}, {7, 8, 2}, {6, 7, 2}, {8, 9, 2}};
         int limit = 7;
 
