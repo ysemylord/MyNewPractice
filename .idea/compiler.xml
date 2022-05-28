@@ -7,6 +7,7 @@
       <module name="My_Application.customview" target="11" />
       <module name="My_Application.dialogdemo" target="11" />
       <module name="My_Application.emptyapplication" target="11" />
+      <module name="My_Application.exceptionapplication" target="11" />
       <module name="My_Application.fileproviderclientapplication" target="11" />
       <module name="My_Application.fileproviderserverapplication" target="11" />
       <module name="My_Application.handlerapplication" target="11" />

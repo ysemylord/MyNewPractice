@@ -3,15 +3,11 @@ package com.kotlin_coroutines
 import kotlin.coroutines.*
 
 /**
- * 带有接受者的startCoroutine
+ * title 带有接受者的startCoroutine
  */
 fun main() {
     startCoroutine2()
 }
-
-
-
-
 
 private fun startCoroutine1() {
     //带有接收者的函数

@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/customview" />
             <option value="$PROJECT_DIR$/dialogdemo" />
             <option value="$PROJECT_DIR$/emptyapplication" />
+            <option value="$PROJECT_DIR$/exceptionapplication" />
             <option value="$PROJECT_DIR$/fileproviderclientapplication" />
             <option value="$PROJECT_DIR$/fileproviderserverapplication" />
             <option value="$PROJECT_DIR$/handlerapplication" />
@@ -33,7 +34,6 @@
             <option value="$PROJECT_DIR$/textviewdemo" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

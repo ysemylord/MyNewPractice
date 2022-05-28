@@ -2,8 +2,11 @@ package com.kotlin_coroutines
 
 import kotlin.coroutines.*
 
+/**
+ * title startCoroutine  createCoroutine
+ */
 fun main() {
-
+    startCoroutine()
 }
 
 private fun startCoroutine() {
@@ -14,7 +17,11 @@ private fun startCoroutine() {
         object : Continuation<Int> {
             override val context = EmptyCoroutineContext
             override fun resumeWith(result: Result<Int>) {
-                println("Coroutine End: $result")
+                if(result.isSuccess){
+
+                }else if(result.isFailure){
+
+                }
             }
         }
     )

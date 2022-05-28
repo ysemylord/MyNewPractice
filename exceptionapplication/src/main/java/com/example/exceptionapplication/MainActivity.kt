@@ -12,11 +12,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Thread.setDefaultUncaughtExceptionHandler { t, e ->
+            e.printStackTrace()
+        }
     }
 
     fun click(view: View) {
-
-        /*  Observable.just("1")
+          Observable.just("1")
               .subscribeOn(Schedulers.io())
               .subscribe {
                   try {
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                       e.printStackTrace()
                   }
 
-              }*/
+              }
     }
 
     fun myClick() {
