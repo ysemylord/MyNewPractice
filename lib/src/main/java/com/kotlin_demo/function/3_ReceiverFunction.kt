@@ -10,7 +10,7 @@ fun main() {
     //在函数题内部可以使用receiver的函数
     val sum: Int.(Int) -> Int = { other -> plus(other) }
     //调用带有receiver的函数
-    val result = sum(2, 1)
+    val result = 2.sum(1)
     println(result)
 
     //声明一个带有receiver的函数(使用匿名函数)

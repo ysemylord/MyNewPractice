@@ -8,5 +8,6 @@ class MyViewModel : ViewModel() {
     val name: MutableLiveData<String> = MutableLiveData()
     fun getName() {
         name.value = null
+
     }
 }

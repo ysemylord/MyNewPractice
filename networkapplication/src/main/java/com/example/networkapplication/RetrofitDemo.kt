@@ -44,15 +44,17 @@ object RetrofitTest {
         val gitHubService = retrofit.create(GitHubService::class.java)
         //这个call其实是ExecutorCallbackCall
         val call = gitHubService.listRepos("octocat")
-
+        Log.i("RetrofitTest 调用线程",Thread.currentThread().toString())
         call.enqueue(object : Callback<List<Owner>> {
             override fun onResponse(call: Call<List<Owner>>, response: Response<List<Owner>>) {
+                Log.i("RetrofitTest 回调线程",Thread.currentThread().toString())
                 val owners = response.body()!!
-                Log.i("RetrofitTest", owners[0].id.toString() + "")
+                Log.i("RetrofitTest ", owners[0].id.toString() + "")
             }
 
             override fun onFailure(call: Call<List<Owner>>, t: Throwable) {
-                Log.i("RetrofitTest", "error")
+                Log.i("RetrofitTest 回调线程",Thread.currentThread().toString())
+                Log.i("RetrofitTest ", "error")
             }
         })
     }
@@ -83,7 +85,8 @@ object RetrofitTest {
             })
     }
 
-    fun testWithCoroutine() {
+    fun testWithCoroutineOne() {
+        Log.i("RetrofitTest 调用线程",Thread.currentThread().toString())
         val retrofit = Retrofit.Builder()
             .client(OkHttpClient())
             .baseUrl("https://api.github.com/")
@@ -92,11 +95,30 @@ object RetrofitTest {
             .build()
         val gitHubService = retrofit.create(GitHubService::class.java)
         GlobalScope.launch(Dispatchers.IO) {
+            Log.i("RetrofitTest 执行线程",Thread.currentThread().toString())
             val owners = gitHubService.listReposCoroutine("octocat")
             withContext(Dispatchers.Main) {
+                Log.i("RetrofitTest 回调线程",Thread.currentThread().toString())
                 Log.i("RetrofitTest", owners[0].id.toString() + "")
             }
         }
-
     }
+
+    fun testWithCoroutineTwo() {
+        Log.i("RetrofitTest 调用线程",Thread.currentThread().toString())
+        val retrofit = Retrofit.Builder()
+            .client(OkHttpClient())
+            .baseUrl("https://api.github.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .build()
+        val gitHubService = retrofit.create(GitHubService::class.java)
+        GlobalScope.launch {
+            Log.i("RetrofitTest 执行线程",Thread.currentThread().toString())
+            val owners = gitHubService.listReposCoroutine("octocat")
+            Log.i("RetrofitTest 回调线程",Thread.currentThread().toString())
+            Log.i("RetrofitTest", owners[0].id.toString() + "")
+        }
+    }
+
 }
