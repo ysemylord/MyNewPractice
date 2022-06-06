@@ -101,7 +101,7 @@ class Coroutine< P, R> (
     }
 }
 
-class Dispatcher: ContinuationInterceptor {
+open class Dispatcher: ContinuationInterceptor {
     override val key = ContinuationInterceptor
 
     private val executor = Executors.newSingleThreadExecutor()
