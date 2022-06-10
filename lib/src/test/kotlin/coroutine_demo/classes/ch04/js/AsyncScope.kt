@@ -14,7 +14,7 @@ import kotlin.coroutines.*
 
 interface AsyncScope
 
-suspend fun <T> AsyncScope.await(block: () -> Call<T>) = suspendCoroutine<T> {
+suspend fun <T> AsyncScope.myAwait0(block: () -> Call<T>) = suspendCoroutine<T> {
     continuation ->
     val call = block()
     call.enqueue(object : Callback<T>{
@@ -32,7 +32,7 @@ suspend fun <T> AsyncScope.await(block: () -> Call<T>) = suspendCoroutine<T> {
     })
 }
 
-fun async(context: CoroutineContext = EmptyCoroutineContext, block: suspend AsyncScope.() -> Unit) {
+fun myAsync0(context: CoroutineContext = EmptyCoroutineContext, block: suspend AsyncScope.() -> Unit) {
     val completion = AsyncCoroutine(context)
     block.startCoroutine(completion, completion)
 }
@@ -55,9 +55,9 @@ fun main() {
             })
 
     thread {
-        async(handlerDispatcher) {
+        myAsync0(handlerDispatcher) {
             println("${Thread.currentThread()}")
-            val user = await { githubApi.getUserCallback("bennyhuo") }
+            val user = myAwait0 { githubApi.getUserCallback("bennyhuo") }
             println(user)
         }
     }

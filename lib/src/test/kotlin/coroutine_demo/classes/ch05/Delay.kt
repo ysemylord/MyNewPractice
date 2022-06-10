@@ -1,5 +1,6 @@
 package coroutine_demo.classes.ch05
 
+import coroutine_demo.classes.ch05.cancel.suspendCancellableCoroutine
 import java.util.concurrent.Executors
 import java.util.concurrent.ThreadFactory
 import java.util.concurrent.TimeUnit
@@ -33,4 +34,18 @@ suspend fun delay(time: Long, unit: TimeUnit = TimeUnit.MILLISECONDS) =
         executor.schedule({
             continuation.resume(Unit)
         }, time, unit)
+    }
+
+/**
+ * 支持取消
+ */
+suspend fun delay2(time: Long, unit: TimeUnit = TimeUnit.MILLISECONDS) =
+    suspendCancellableCoroutine<Unit> { continuation ->
+        val future= executor.schedule({
+            continuation.resume(Unit)
+        }, time, unit)
+        //协程取消的时候，也把future这个任务取消啦
+        continuation.invokeOnCancellation {
+            future.cancel(true)
+        }
     }

@@ -1,11 +1,13 @@
 package com.example.textviewdemo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,9 +27,17 @@ public class MainActivity extends AppCompatActivity {
                 int textViewWidth = textView.getWidth();
                 int padding = (int) ((textViewWidth-firstLineWidth)/2);
                 textView.setPadding(padding,0,0,0);
+                textView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        startActivity(new Intent(MainActivity.this,EmptyActivity.class));
+                    }
+                });
 
                 Log.i("MainActivity", lineFirst);
             }
         });
     }
+
+
 }
