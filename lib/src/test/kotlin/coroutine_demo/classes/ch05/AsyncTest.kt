@@ -1,9 +1,7 @@
 package coroutine_demo.classes.ch05
 
 import common.log
-import coroutine_demo.classes.ch05.async
 import coroutine_demo.classes.ch05.scope.GlobalScope
-import kotlin.concurrent.thread
 
 class AsyncTest {
 }
@@ -13,7 +11,7 @@ suspend fun main() {
         log("1")
         val deffered = async {
             log("2")
-            delay(1000)
+            delay0(1000)
             log("3")
             "结果"
         }

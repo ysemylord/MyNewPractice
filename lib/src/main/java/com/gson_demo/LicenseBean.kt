@@ -9,7 +9,7 @@ import java.lang.StringBuilder
 data class Result(val code: Int, val message: String, val data: LicenseBean)
 
 data class LicenseBean(
-    val key: String,
+    var key: String="jak",
     val name: String,
     val spdx_id: String,
     val url: String,
@@ -53,5 +53,7 @@ private fun baseUse() {
     //                |
     //               \|/
     //               Bean
+    println(bean.data.key)
+    println(bean.data.real)
     print("bean:\n $bean")
 }

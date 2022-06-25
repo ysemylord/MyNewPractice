@@ -3,6 +3,7 @@ package com.example.textviewdemo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MotionEvent
 import android.view.View
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.GlobalScope
@@ -17,9 +18,12 @@ class EmptyActivity : AppCompatActivity() {
 
     }
 
+
+
     fun click(view: View) {
         GlobalScope.launch/*(CoroutineExceptionHandler { _, _-> Log.i("fdfd","发生异常") })*/ {
             val i = 1 / 0
         }
+        Log.i("EmptyActivity","click")
     }
 }

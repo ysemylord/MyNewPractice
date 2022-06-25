@@ -1,5 +1,6 @@
 package coroutine_demo.classes.ch05
 
+import common.log
 import coroutine_demo.classes.ch05.cancel.suspendCancellableCoroutine
 import java.util.concurrent.Executors
 import java.util.concurrent.ThreadFactory
@@ -29,7 +30,7 @@ private val executor = Executors.newScheduledThreadPool(1, object : ThreadFactor
     }
 })
 
-suspend fun delay(time: Long, unit: TimeUnit = TimeUnit.MILLISECONDS) =
+suspend fun delay0(time: Long, unit: TimeUnit = TimeUnit.MILLISECONDS) =
     suspendCoroutine<Unit> { continuation ->
         executor.schedule({
             continuation.resume(Unit)
@@ -42,6 +43,7 @@ suspend fun delay(time: Long, unit: TimeUnit = TimeUnit.MILLISECONDS) =
 suspend fun delay2(time: Long, unit: TimeUnit = TimeUnit.MILLISECONDS) =
     suspendCancellableCoroutine<Unit> { continuation ->
         val future= executor.schedule({
+            log("schecel")
             continuation.resume(Unit)
         }, time, unit)
         //协程取消的时候，也把future这个任务取消啦

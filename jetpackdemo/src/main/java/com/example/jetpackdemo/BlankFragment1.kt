@@ -76,8 +76,8 @@ class BlankFragment1 : Fragment() {
             it.findNavController().navigate(action)
         }
 
-        val action = BlankFragment1Directions.actionBlankFragment1ToSpanStringDemoFragment()
-        findNavController().navigate(action)
+        //val action = BlankFragment1Directions.actionBlankFragment1ToSpanStringDemoFragment()
+        //findNavController().navigate(action)
 
         return inflate
     }

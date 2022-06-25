@@ -21,7 +21,7 @@ class BlockingCoroutine<T>(context: CoroutineContext, private val eventQueue: Li
      */
     fun joinBlocking(): T {
         while (!isCompleted) {
-           // log("take event")
+            //log("take event")
             eventQueue.take().invoke()
         }
         return (state.get() as CoroutineState.Complete<T>).let {

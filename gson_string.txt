@@ -3,10 +3,10 @@
   "code":200,
   "message":"get success",
   "data":{
-            "key": "mit",
+            "key": null,
             "name": "MIT License",
             "spdx_id": "MIT",
-            "url": "https://api.github.com/licenses/mit",
+            "url": "https://api.github.com/licenses/Fmit",
             "node_id": "MDc6TGljZW5zZTEz",
             "real": null
          }

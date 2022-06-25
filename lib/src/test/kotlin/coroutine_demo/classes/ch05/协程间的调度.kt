@@ -1,11 +1,8 @@
 package coroutine_demo.classes.ch05
 
 import common.log
-import coroutine_demo.classes.ch05.scope.CoroutineScope
 import coroutine_demo.classes.ch05.scope.GlobalScope
-import kotlinx.coroutines.CoroutineName
 import kotlin.concurrent.thread
-import kotlin.coroutines.coroutineContext
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
@@ -30,7 +27,7 @@ suspend fun main() {
             }
         }
         log("4")
-        delay(1000)
+        delay0(1000)
         log("5")
         log("子协程end")
     }

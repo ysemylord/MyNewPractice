@@ -16,7 +16,18 @@ internal class ContextScope(context: CoroutineContext) : CoroutineScope {
     override val scopeContext: CoroutineContext = context
 }
 
-
+/**
+ * 在suspend函数中创建子协程
+ * 创建一个协程需要
+ * 1. 作用域(Receiver)
+ * 2. completion(AbstractCoroutine)
+ * 解决方法：
+ * 1. 通过suspendCoroutine拿到挂起点，通过挂起点拿到协程上下文创建一个协程作用域
+ * 2. 继承AbstractCoroutine
+ * 上面两点的实现ScopeCoroutine
+ *
+ * 这个函数翻译成获取协程作用域
+ */
 suspend fun <R> coroutineScope(block: suspend CoroutineScope.() -> R): R =
         suspendCoroutine { continuation ->
             val coroutine = ScopeCoroutine(continuation.context, continuation)

@@ -24,7 +24,7 @@ fun CoroutineScope.launch(
     return completion
 }
 
-fun <T> runBlocking(context: CoroutineContext = EmptyCoroutineContext, block: suspend CoroutineScope.() -> T): T {
+fun <T> myRunBlocking(context: CoroutineContext = EmptyCoroutineContext, block: suspend CoroutineScope.() -> T): T {
     val eventQueue = BlockingQueueDispatcher()
     //ignore interceptor passed from outside.
     val newContext = context + DispatcherContext(eventQueue)
