@@ -1,7 +1,19 @@
 package 课程.listen06
 
 /**
- * 涉及到的东西
+ * 涉及到的只是点
+ *
+ * + 对Receiver的理解
+ *   Receiver本质上是一个参数
+ *   但是在使用时，它要理解为函数的接受者，函数的调用者，函数的作用范围
+ *   这样在就能写出更加灵活的程序
+ *
+ * + 操作符重载
+ *  ()  -> invoke
+ *  +A  -> unary
+ * + 集合的变化
+ *  map
+ *  joinToString
  *
  */
 class HtmlDSL {

@@ -12,5 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:textColor">@android:color/holo_blue_bright</item>
+        <item name="android:textViewStyle">@style/My_Style2</item>
     </style>
 </resources>

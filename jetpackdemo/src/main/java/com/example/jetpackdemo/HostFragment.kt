@@ -6,14 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-class BlankFragment1 : Fragment() {
+class HostFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
@@ -44,40 +43,44 @@ class BlankFragment1 : Fragment() {
             // navigate(R.id.action_blankFragment1_to_safeArgsFragment, bundleOf("param1" to "传递的参数"))
 
             //使用Safe Args生成的NavDirections跳转
-            val action = BlankFragment1Directions.actionBlankFragment1ToSafeArgsFragment("传递的参数")
+            val action = HostFragmentDirections.actionBlankFragment1ToSafeArgsFragment("传递的参数")
             it.findNavController().navigate(action)
         }
         inflate?.findViewById<View>(R.id.to_room)?.setOnClickListener {
-            val action = BlankFragment1Directions.actionBlankFragment1ToRoomDemoFragment()
+            val action = HostFragmentDirections.actionBlankFragment1ToRoomDemoFragment()
             it.findNavController().navigate(action)
         }
 
         inflate?.findViewById<View>(R.id.to_dispatch_touch_event_fragment)?.setOnClickListener {
-            val action = BlankFragment1Directions.actionBlankFragment1ToDispatchTouchEventFragment()
+            val action = HostFragmentDirections.actionBlankFragment1ToDispatchTouchEventFragment()
             it.findNavController().navigate(action)
         }
 
         inflate?.findViewById<View>(R.id.to_draw_fragment)?.setOnClickListener {
-            val action = BlankFragment1Directions.actionBlankFragment1ToDrawFragment()
+            val action = HostFragmentDirections.actionBlankFragment1ToDrawFragment()
             it.findNavController().navigate(action)
         }
 
         inflate?.findViewById<View>(R.id.to_draw_finish_fragment)?.setOnClickListener {
-            val action = BlankFragment1Directions.actionBlankFragment1ToDrawFinishFragment()
+            val action = HostFragmentDirections.actionBlankFragment1ToDrawFinishFragment()
             it.findNavController().navigate(action)
         }
         inflate?.findViewById<View>(R.id.to_fixed_top_recycler_view)?.setOnClickListener {
-            val action = BlankFragment1Directions.actionBlankFragment1ToFixedTopRecyclerViewFragment()
+            val action = HostFragmentDirections.actionBlankFragment1ToFixedTopRecyclerViewFragment()
             it.findNavController().navigate(action)
         }
 
         inflate?.findViewById<View>(R.id.to_span_string_view)?.setOnClickListener {
-            val action = BlankFragment1Directions.actionBlankFragment1ToSpanStringDemoFragment()
+            val action = HostFragmentDirections.actionBlankFragment1ToSpanStringDemoFragment()
+            it.findNavController().navigate(action)
+        }
+        inflate?.findViewById<View>(R.id.to_test_scope_fragment)?.setOnClickListener {
+            val action = HostFragmentDirections.actionBlankFragment1ToTestRepositoryScopeFragment()
             it.findNavController().navigate(action)
         }
 
-        //val action = BlankFragment1Directions.actionBlankFragment1ToSpanStringDemoFragment()
-        //findNavController().navigate(action)
+        val action = HostFragmentDirections.actionBlankFragment1ToTestRepositoryScopeFragment()
+        findNavController().navigate(action)
 
         return inflate
     }
@@ -85,7 +88,7 @@ class BlankFragment1 : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            BlankFragment1().apply {
+            HostFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

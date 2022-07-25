@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/blankFragment1"
-        android:name="com.example.jetpackdemo.BlankFragment1"
+        android:name="com.example.jetpackdemo.HostFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank">
         <action
@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_blankFragment1_to_spanStringDemoFragment"
             app:destination="@id/spanStringDemoFragment" />
+        <action
+            android:id="@+id/action_blankFragment1_to_testRepositoryScopeFragment"
+            app:destination="@id/testRepositoryScopeFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -100,5 +103,9 @@
         android:id="@+id/spanStringDemoFragment"
         android:name="com.example.jetpackdemo.advance_ui.span_string.SpanStringDemoFragment"
         android:label="SpanStringDemoFragment" />
+    <fragment
+        android:id="@+id/testRepositoryScopeFragment"
+        android:name="com.example.jetpackdemo.TestRepositoryScopeFragment"
+        android:label="TestRepositoryScopeFragment" />
 
 </navigation>

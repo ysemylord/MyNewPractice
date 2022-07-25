@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BlankFragment1">
+    tools:context=".HostFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -95,5 +95,12 @@
             android:text="富文本"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/to_test_scope_fragment"
+            android:text="测试作用域"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

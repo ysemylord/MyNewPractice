@@ -22,7 +22,7 @@
         <entry key="app/src/main/res/layout/activity_start_demo1.xml" value="0.3203125" />
         <entry key="customview/src/main/res/layout/activity_layout_inflater.xml" value="0.335" />
         <entry key="customview/src/main/res/layout/activity_main.xml" value="0.29010416666666666" />
-        <entry key="customview/src/main/res/layout/activity_test_mearsure.xml" value="0.3046875" />
+        <entry key="customview/src/main/res/layout/activity_test_mearsure.xml" value="0.1" />
         <entry key="customview/src/main/res/layout/activity_view_pager_show.xml" value="0.3177083333333333" />
         <entry key="customview/src/main/res/layout/view_page_view.xml" value="0.3177083333333333" />
         <entry key="dialogdemo/src/main/res/layout/activity_main.xml" value="0.25885416666666666" />
@@ -33,7 +33,9 @@
         <entry key="hookactivityapplication/src/main/res/layout/activity_main.xml" value="0.25625" />
         <entry key="hookactivityapplication/src/main/res/layout/activity_stub.xml" value="0.25885416666666666" />
         <entry key="hookactivityapplication/src/main/res/layout/activity_target.xml" value="0.153125" />
-        <entry key="jetpackdemo/src/main/res/layout/activity_2.xml" value="0.32083333333333336" />
+        <entry key="jetpackdemo/src/main/res/layout/activity_2.xml" value="0.21376656690893545" />
+        <entry key="jetpackdemo/src/main/res/layout/activity_3.xml" value="0.29791666666666666" />
+        <entry key="jetpackdemo/src/main/res/layout/activity_jetpack_base_use.xml" value="0.28229166666666666" />
         <entry key="jetpackdemo/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="jetpackdemo/src/main/res/layout/fragment_blank.xml" value="0.335" />
         <entry key="jetpackdemo/src/main/res/layout/fragment_blank2.xml" value="0.22395833333333334" />
@@ -48,6 +50,7 @@
         <entry key="jetpackdemo/src/main/res/layout/fragment_room_demo.xml" value="0.20512820512820512" />
         <entry key="jetpackdemo/src/main/res/layout/fragment_safe_args.xml" value="0.2875" />
         <entry key="jetpackdemo/src/main/res/layout/fragment_span_string.xml" value="0.33541666666666664" />
+        <entry key="jetpackdemo/src/main/res/layout/fragment_test_repository_scope_layout.xml" value="0.3171875" />
         <entry key="jetpackdemo/src/main/res/layout/item.xml" value="0.33229166666666665" />
         <entry key="jetpackdemo/src/main/res/layout/simple_inner_solution_list_view.xml" value="0.28802083333333334" />
         <entry key="jetpackdemo/src/main/res/layout/simple_list_view.xml" value="0.22604166666666667" />
@@ -57,8 +60,16 @@
         <entry key="maidlclient/src/main/res/layout/activity_main.xml" value="0.25052083333333336" />
         <entry key="myaidlService/src/main/res/layout/activity_main.xml" value="0.2980072463768116" />
         <entry key="myaidlclient/src/main/res/layout/activity_main.xml" value="0.22864583333333333" />
-        <entry key="myfragmentdemo/src/main/res/layout/activity_main.xml" value="0.22916666666666666" />
+        <entry key="myfragmentdemo/src/main/res/layout/activity_main.xml" value="0.19838056680161945" />
+        <entry key="myfragmentdemo/src/main/res/layout/activity_parent_child_fragment.xml" value="0.23489583333333333" />
+        <entry key="myfragmentdemo/src/main/res/layout/activity_test_sace_instance.xml" value="0.3723958333333333" />
+        <entry key="myfragmentdemo/src/main/res/layout/activity_view_pager2_main.xml" value="0.2864583333333333" />
         <entry key="myfragmentdemo/src/main/res/layout/fragment_blank.xml" value="0.22916666666666666" />
+        <entry key="myfragmentdemo/src/main/res/layout/fragment_child.xml" value="0.1527777777777778" />
+        <entry key="myfragmentdemo/src/main/res/layout/fragment_parent.xml" value="0.1527777777777778" />
+        <entry key="myfragmentdemo/src/main/res/layout/view_pager_fragment_parent.xml" value="0.31927083333333334" />
+        <entry key="myfragmentdemo2/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="myfragmentdemo2/src/main/res/layout/activity_main2.xml" value="0.33697916666666666" />
         <entry key="networkapplication/src/main/res/layout/activity_network.xml" value="0.25" />
         <entry key="notificationdemoapplication/src/main/res/layout/activity_main.xml" value="0.2677083333333333" />
         <entry key="otherapplication/src/main/res/drawable/ic_launcher_background.xml" value="0.3638888888888889" />

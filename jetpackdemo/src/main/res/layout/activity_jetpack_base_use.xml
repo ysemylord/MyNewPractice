@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".base_use.JetpackBaseUseActivity">
+   <TextView
+       android:layout_width="wrap_content"
+       android:id="@+id/show_number_tv"
+       android:layout_height="wrap_content"/>
+
+   <Button
+       android:text="加一"
+       android:layout_width="wrap_content"
+       android:id="@+id/click_btn"
+       android:layout_height="wrap_content"/>
+
+   <Button
+       android:id="@+id/rotate1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="横屏" />
+
+   <Button
+       android:id="@+id/rotate2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="竖屏" />
+</androidx.appcompat.widget.LinearLayoutCompat>

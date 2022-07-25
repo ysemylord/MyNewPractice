@@ -3,7 +3,7 @@
   "code":200,
   "message":"get success",
   "data":{
-            "key": null,
+
             "name": "MIT License",
             "spdx_id": "MIT",
             "url": "https://api.github.com/licenses/Fmit",

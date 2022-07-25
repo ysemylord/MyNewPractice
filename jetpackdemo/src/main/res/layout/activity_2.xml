@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Activity2">
 
+    <Button
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:onClick="click"
+        android:text="点击"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

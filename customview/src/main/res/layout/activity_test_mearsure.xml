@@ -5,8 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TestMearsureActivity">
-   <androidx.appcompat.widget.AppCompatTextView
+   <com.example.customview.TestView1
        android:id="@+id/textview"
+       android:text="大家好"
+       android:textColor="@color/black"
+       style="@style/My_Style"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"/>
 </FrameLayout>
