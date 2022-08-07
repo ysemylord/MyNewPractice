@@ -5,7 +5,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.example.jetpackdemo.room_demo.SleepNight
 import com.example.jetpackdemo.room_demo.dao.SleepDatabaseDao
-import com.example.jetpackdemo.room_demo.database.SleepDataBase
+import com.example.jetpackdemo.room_demo.database.AppDataBase
 import junit.framework.Assert.assertEquals
 import org.junit.After
 import org.junit.Before
@@ -17,14 +17,14 @@ import java.io.IOException
 class SleepDatabaseTest {
 
     private lateinit var sleepDao: SleepDatabaseDao
-    private lateinit var db: SleepDataBase
+    private lateinit var db: AppDataBase
 
     @Before
     fun createDb() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         // Using an in-memory database because the information stored here disappears when the
         // process is killed.
-        db = Room.inMemoryDatabaseBuilder(context, SleepDataBase::class.java)
+        db = Room.inMemoryDatabaseBuilder(context, AppDataBase::class.java)
             // Allowing main thread queries, just for testing.
             .allowMainThreadQueries()
             .build()

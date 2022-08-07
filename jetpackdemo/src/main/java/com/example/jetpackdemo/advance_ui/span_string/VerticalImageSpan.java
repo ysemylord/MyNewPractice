@@ -59,6 +59,7 @@ public class VerticalImageSpan extends ImageSpan {
         //偏移画布后开始绘制
         canvas.translate(x, transY);
         b.draw(canvas);
+
         canvas.restore();
         Log.i("VerticalImageSpan draw", "\ntext:" + text + " \nstart:" + start + " \nend:" + end + " \nx:" + x + " \ny:" + y + " \nbottom:" + bottom + " \ntop:" + top);
     }

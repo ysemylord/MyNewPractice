@@ -2,20 +2,20 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-  >
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/to_add_student"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/one_time_work"
+        android:text="one_time_work"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="添加学生" />
+        android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/to_query_student"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/periodic_work"
+        android:text="periodic_work"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="查询学生" />
+        android:layout_height="wrap_content" />
+
 
 </androidx.appcompat.widget.LinearLayoutCompat>

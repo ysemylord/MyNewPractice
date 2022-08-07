@@ -49,6 +49,9 @@
         <action
             android:id="@+id/action_blankFragment1_to_testRepositoryScopeFragment"
             app:destination="@id/testRepositoryScopeFragment" />
+        <action
+            android:id="@+id/action_blankFragment1_to_workManagerDemoFragment"
+            app:destination="@id/workManagerDemoFragment" />
     </fragment>
     <fragment
         android:id="@+id/blankFragment2"
@@ -107,5 +110,9 @@
         android:id="@+id/testRepositoryScopeFragment"
         android:name="com.example.jetpackdemo.TestRepositoryScopeFragment"
         android:label="TestRepositoryScopeFragment" />
+    <fragment
+        android:id="@+id/workManagerDemoFragment"
+        android:name="com.example.jetpackdemo.test_work_manager.WorkManagerDemoFragment"
+        android:label="WorkManagerDemoFragment" />
 
 </navigation>

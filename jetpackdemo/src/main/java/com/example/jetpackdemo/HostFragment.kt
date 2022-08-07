@@ -78,8 +78,12 @@ class HostFragment : Fragment() {
             val action = HostFragmentDirections.actionBlankFragment1ToTestRepositoryScopeFragment()
             it.findNavController().navigate(action)
         }
+        inflate?.findViewById<View>(R.id.to_work_manager)?.setOnClickListener {
+            val action = HostFragmentDirections.actionBlankFragment1ToWorkManagerDemoFragment()
+            it.findNavController().navigate(action)
+        }
 
-        val action = HostFragmentDirections.actionBlankFragment1ToTestRepositoryScopeFragment()
+        val action = HostFragmentDirections.actionBlankFragment1ToWorkManagerDemoFragment()
         findNavController().navigate(action)
 
         return inflate

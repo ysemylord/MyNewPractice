@@ -50,12 +50,20 @@
         app:layout_constraintStart_toStartOf="@+id/test_safe_args"
         app:layout_constraintTop_toBottomOf="@+id/test_safe_args" />
 
+    <Button
+        android:id="@+id/to_work_manager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="work manager"
+        app:layout_constraintBottom_toBottomOf="@+id/to_room"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="@+id/init_textView"
         app:layout_constraintTop_toBottomOf="@+id/init_textView">
 
@@ -85,22 +93,23 @@
 
         <Button
             android:id="@+id/to_fixed_top_recycler_view"
-            android:text="RecyclerView吸顶"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="RecyclerView吸顶" />
 
 
         <Button
             android:id="@+id/to_span_string_view"
-            android:text="富文本"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="富文本" />
 
         <Button
             android:id="@+id/to_test_scope_fragment"
-            android:text="测试作用域"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="测试作用域" />
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

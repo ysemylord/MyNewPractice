@@ -3,9 +3,15 @@ package com.example.jetpackdemo
 import android.app.Application
 import android.util.Log
 
-class MyApp :Application(){
+class MyApp : Application() {
+
+    companion object {
+        lateinit var instance: MyApp
+    }
+
     override fun onCreate() {
         super.onCreate()
-        Log.i("Application","create")
+        instance = this
+        Log.i("Application", "create")
     }
 }

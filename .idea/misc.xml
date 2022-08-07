@@ -24,12 +24,14 @@
         <entry key="customview/src/main/res/layout/activity_main.xml" value="0.29010416666666666" />
         <entry key="customview/src/main/res/layout/activity_test_mearsure.xml" value="0.1" />
         <entry key="customview/src/main/res/layout/activity_view_pager_show.xml" value="0.3177083333333333" />
+        <entry key="customview/src/main/res/layout/layout_tmp_0.xml" value="0.2794871794871795" />
         <entry key="customview/src/main/res/layout/view_page_view.xml" value="0.3177083333333333" />
         <entry key="dialogdemo/src/main/res/layout/activity_main.xml" value="0.25885416666666666" />
         <entry key="dialogdemo/src/main/res/layout/activity_second.xml" value="0.26614583333333336" />
         <entry key="exceptionapplication/src/main/res/layout/activity_main.xml" value="0.30416666666666664" />
         <entry key="fileproviderclientapplication/src/main/res/layout/activity_main.xml" value="0.2328125" />
         <entry key="fileproviderserverapplication/src/main/res/layout/activity_main.xml" value="0.32708333333333334" />
+        <entry key="handlerapplication/src/main/res/layout/activity_main.xml" value="0.15925925925925927" />
         <entry key="hookactivityapplication/src/main/res/layout/activity_main.xml" value="0.25625" />
         <entry key="hookactivityapplication/src/main/res/layout/activity_stub.xml" value="0.25885416666666666" />
         <entry key="hookactivityapplication/src/main/res/layout/activity_target.xml" value="0.153125" />
@@ -51,6 +53,7 @@
         <entry key="jetpackdemo/src/main/res/layout/fragment_safe_args.xml" value="0.2875" />
         <entry key="jetpackdemo/src/main/res/layout/fragment_span_string.xml" value="0.33541666666666664" />
         <entry key="jetpackdemo/src/main/res/layout/fragment_test_repository_scope_layout.xml" value="0.3171875" />
+        <entry key="jetpackdemo/src/main/res/layout/fragment_work_manager_demo.xml" value="0.28034188034188035" />
         <entry key="jetpackdemo/src/main/res/layout/item.xml" value="0.33229166666666665" />
         <entry key="jetpackdemo/src/main/res/layout/simple_inner_solution_list_view.xml" value="0.28802083333333334" />
         <entry key="jetpackdemo/src/main/res/layout/simple_list_view.xml" value="0.22604166666666667" />
