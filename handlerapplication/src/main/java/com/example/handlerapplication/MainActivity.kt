@@ -1,23 +1,45 @@
 package com.example.handlerapplication
 
+import android.animation.ObjectAnimator
 import android.os.*
 import android.util.Log
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+
+
+    val handler = object : Handler() {
+        override fun handleMessage(msg: Message) {
+            super.handleMessage(msg)
+        }
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        Message().run {
+            Log.i("MainActivity", this.isAsynchronous.toString())
+        }
+
         //testScissors()
+
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        handler.removeCallbacksAndMessages(null)
     }
 
     fun useMyHandlerThread(view: View) {
         val myHandlerThread = MyHandlerThread()
         myHandlerThread.start()
-        val myHandler = Handler(myHandlerThread.getLooper()).apply {
-            Log.i("useMyHandlerThread","${Thread.currentThread()}")
-        }
+
     }
 
     fun useHandlerThread(view: View) {
@@ -27,7 +49,20 @@ class MainActivity : AppCompatActivity() {
                 Log.i("useHandlerThread", "${Thread.currentThread()}")
             }
         }
+
+        ObjectAnimator.ofArgb().start()
     }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun useIdleHandler(view: View) {
+        Looper.getMainLooper().queue.addIdleHandler {
+
+            true
+        }
+
+    }
+
+
 }
 
 fun testScissors() {
@@ -58,6 +93,7 @@ class MyHandlerThread : Thread("MyHandlerThread") {
         }
         return looper!!
     }
+
 }
 
 
