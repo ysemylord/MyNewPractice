@@ -2,6 +2,7 @@ package com.example.dialogdemo
 
 import android.app.Application
 import android.content.Context
+import android.content.Intent
 import android.graphics.Point
 import android.os.Build
 import android.os.Bundle
@@ -20,7 +21,7 @@ class WindowManagerDemoActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
-        supportActionBar?.hide()
+        //supportActionBar?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_window_manager_demo)
 
@@ -43,8 +44,13 @@ class WindowManagerDemoActivity : AppCompatActivity() {
         Log.i("DemoActivity", "navigation bar ${getNavigationBarHeight(this)}")
 
         Handler().postDelayed({
-            val contentViewHeight = findViewById<View>(Window.ID_ANDROID_CONTENT).height
+            val contentView = findViewById<View>(Window.ID_ANDROID_CONTENT)
+            val contentViewHeight = contentView.height
             Log.i("DemoActivity", "contentViewHeight $contentViewHeight ")
+            (contentView.parent.parent.parent as? ViewGroup).run {
+                Log.i("DemoActivity screen_simple paddingTop", this?.paddingTop.toString())
+                Log.i("DemoActivity screen_simple MarginLayoutParams", (this?.layoutParams as? ViewGroup.MarginLayoutParams)?.bottomMargin.toString())
+            }
         }, 1000)
 
     }
