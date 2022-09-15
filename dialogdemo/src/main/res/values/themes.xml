@@ -46,4 +46,9 @@
         <item name="postSplashScreenTheme">@style/Theme.MyApplication</item>
     </style>
 
+  <style name="Immersive" parent="Theme.MyApplication">
+      <item name="android:windowTranslucentNavigation">true</item>
+      <item name="android:windowTranslucentStatus">true</item>
+  </style>
+
 </resources>
