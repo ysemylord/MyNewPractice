@@ -5,7 +5,6 @@
       <module name="My_Application.app" target="11" />
       <module name="My_Application.app.serializabledemo" target="11" />
       <module name="My_Application.customview" target="11" />
-      <module name="My_Application.dialogdemo" target="11" />
       <module name="My_Application.emptyapplication" target="11" />
       <module name="My_Application.exceptionapplication" target="11" />
       <module name="My_Application.fileproviderclientapplication" target="11" />
@@ -25,6 +24,7 @@
       <module name="My_Application.testAIDL" target="11" />
       <module name="My_Application.testaidlapplication" target="11" />
       <module name="My_Application.textviewdemo" target="11" />
+      <module name="My_Application.windowdemo" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -14,7 +14,6 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app/serializabledemo" />
             <option value="$PROJECT_DIR$/customview" />
-            <option value="$PROJECT_DIR$/dialogdemo" />
             <option value="$PROJECT_DIR$/emptyapplication" />
             <option value="$PROJECT_DIR$/exceptionapplication" />
             <option value="$PROJECT_DIR$/fileproviderclientapplication" />
@@ -34,6 +33,7 @@
             <option value="$PROJECT_DIR$/surfaceapplication" />
             <option value="$PROJECT_DIR$/testaidlapplication" />
             <option value="$PROJECT_DIR$/textviewdemo" />
+            <option value="$PROJECT_DIR$/windowdemo" />
           </set>
         </option>
       </GradleProjectSettings>
