@@ -15,11 +15,7 @@
         <activity
             android:name=".ImmersiveDemoActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -37,7 +33,13 @@
             android:theme="@style/SplashTheme" />
         <activity
             android:name=".WindowManagerDemoActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".DialogWindowActivity"
             android:exported="true" />

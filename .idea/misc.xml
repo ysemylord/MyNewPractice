@@ -106,6 +106,7 @@
         <entry key="testaidlapplication/src/main/res/layout/activity_main.xml" value="0.16822916666666668" />
         <entry key="textviewdemo/src/main/res/layout/activity_empty.xml" value="0.18489583333333334" />
         <entry key="textviewdemo/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="windowdemo/src/main/res/layout/activity_window_manager_demo.xml" value="0.2076923076923077" />
       </map>
     </option>
   </component>
