@@ -26,8 +26,6 @@ class WindowManagerDemoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_window_manager_demo)
 
-        window.decorView.systemUiVisibility
-
 
         this.display?.run {
             val point = Point()
@@ -98,6 +96,8 @@ class WindowManagerDemoActivity : AppCompatActivity() {
     }
 
     private fun getStatusBarHeight2() {
+
+
         ViewCompat.getRootWindowInsets(window.decorView)?.run {
             getInsets(WindowInsetsCompat.Type.statusBars()).run {
                 Log.i("window inset statusBars", "${toString()}")

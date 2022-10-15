@@ -1,5 +1,6 @@
 package coroutine_demo.classes.ch04.python
 
+import kotlin.concurrent.thread
 import kotlin.coroutines.*
 
 interface Generator<T> {
@@ -45,7 +46,11 @@ class GeneratorIterator<T>(
         state = State.NotReady(start)
     }
 
-    override suspend fun yield(value: T) {
+    /**
+     * 这里返回了中断标志，因为这里就没有调用continuation.resume给continuation.value赋值
+     * 所以continuation.getOrThrow返回的就是COROUTINE_SUSPENDED
+     */
+    override suspend fun yield(value: T):Unit {
         println("yield")
         return suspendCoroutine<Unit> { continuation ->
             state = when (state) {
@@ -56,18 +61,29 @@ class GeneratorIterator<T>(
         }
     }
 
+    /**
+     * 执行协程体，就是传进来的那个block,就是那个循环产生数据的过程
+     */
     private fun resume() {
         when (val currentState = state) {
             is State.NotReady -> currentState.continuation.resume(Unit)
+            else -> {}
         }
     }
 
+    /**
+     * 协程外部调用的
+     */
     override fun hasNext(): Boolean {
         println("hasNex")
         resume()
         return state != State.Done
     }
 
+
+    /**
+     * 协程外部调用的
+     */
     override fun next(): T {
         println("next")
         return when (val currentState = state) {
@@ -101,17 +117,13 @@ fun <T> generator(block: suspend GeneratorScope<T>.(T) -> Unit): (T) -> Generato
 }
 
 fun main() {
+    //generator返回一个函数，调用这个函数才会残生Generator
     val nums = generator { start: Int ->
         for (i in 0..5) {
             yield(start + i)
         }
     }
-
     val seq = nums(10)
-
-    /* for (j in seq) {
-         println(j)
-     }*/
 
     /**
      * 用for in 语句不够直观，这里改写一下

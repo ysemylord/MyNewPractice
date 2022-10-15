@@ -4,6 +4,10 @@ import kotlin.coroutines.Continuation
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
 
+/**
+ * 对称协程
+ * 使用非对称协程Coroutine实现的对称协程
+ */
 interface SymCoroutineScope<T> {
     suspend fun <P> transfer(symCoroutine: SymCoroutine<P>, value: P): T
 }
@@ -35,14 +39,14 @@ class SymCoroutine<T>(
 
     private val body: SymCoroutineScope<T> = object : SymCoroutineScope<T> {
         private tailrec suspend fun <P> transferInner(symCoroutine: SymCoroutine<P>, value: Any?): T{
-            if(this@SymCoroutine.isMain){
+            if(this@SymCoroutine.isMain){//主协程调用transferInner，说明要把调度权限交给symCoroutine
                 return if(symCoroutine.isMain){
                     value as T
-                } else {
+                } else {//将权限交给symCoroutine
                     val parameter = symCoroutine.coroutine.resume(value as P)
                     transferInner(parameter.coroutine, parameter.value)
                 }
-            } else {
+            } else {//不是主协程调用transferInner，说明要把调度权限交让出去
                 coroutine.run {
                     return yield(Parameter(symCoroutine, value as P))
                 }
@@ -54,6 +58,9 @@ class SymCoroutine<T>(
         }
     }
 
+    /**
+     * 非对称协程Coroutine
+     */
     private val coroutine = Coroutine<T, Parameter<*>>(context) {
         Parameter(this@SymCoroutine, suspend {
             block(body, it)

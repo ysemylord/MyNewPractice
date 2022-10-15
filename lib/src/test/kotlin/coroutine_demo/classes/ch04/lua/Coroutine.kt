@@ -5,6 +5,9 @@ import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicReference
 import kotlin.coroutines.*
 
+/**
+ * 仿Lua的协程
+ */
 sealed class Status {
     class Created(val continuation: Continuation<Unit>): Status()
     class Yielded<P>(val continuation: Continuation<P>): Status()
@@ -35,6 +38,9 @@ class Coroutine< P, R> (
     private val scope = object : CoroutineScope<P, R> {
         override var parameter: P? = null
 
+        /**
+         * 语义其实是 比如:A.yield() 让协程A挂起，让协程A所在的协程恢复
+         */
         override suspend fun yield(value: R): P = suspendCoroutine { continuation ->
             val previousStatus = status.getAndUpdate {
                 when(it) {
@@ -75,6 +81,11 @@ class Coroutine< P, R> (
 
     }
 
+    /**
+     * 这个resume不是Continuation.resume
+     * 它是一个挂起函数
+     * 语义其实是 A.resume() 让协程A恢复执行，让A.resume()这行代码所在的协程挂起
+     */
     suspend fun resume(value: P): R = suspendCoroutine { continuation ->
         val previousStatus = status.getAndUpdate {
             when(it) {
@@ -93,6 +104,7 @@ class Coroutine< P, R> (
         when(previousStatus){
             is Status.Created -> previousStatus.continuation.resume(Unit)
             is Status.Yielded<*> -> (previousStatus as Status.Yielded<P>).continuation.resume(value)
+            else -> {}
         }
     }
 

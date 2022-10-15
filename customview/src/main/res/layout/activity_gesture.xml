@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/root_contr"
+    tools:context=".GestureActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:src="@drawable/front"
+        android:id="@+id/back_image_View"
+        android:layout_width="0dp"
+        android:layout_height="800px"
+        android:background="@android:color/holo_blue_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:id="@+id/front_container"
+        android:layout_width="0dp"
+        android:layout_height="800px"
+        app:layout_constraintEnd_toStartOf="@+id/bar_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:src="@drawable/front"
+            android:id="@+id/front_image_View"
+            android:layout_width="match_parent"
+            android:layout_height="800px"
+            android:background="@android:color/holo_red_dark"
+            android:scaleType="centerCrop" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/bar_view"
+        android:layout_width="26dp"
+        android:layout_height="0dp"
+        android:background="@color/cardview_dark_background"
+        app:layout_constraintBottom_toBottomOf="@+id/back_image_View"
+        app:layout_constraintEnd_toEndOf="@+id/anchor_view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/anchor_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/anchor_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/purple_200"
+        app:layout_constraintBottom_toBottomOf="@+id/back_image_View"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/back_image_View" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,16 +1,13 @@
 package com.example.dialogdemo;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import java.util.logging.Handler;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,26 +17,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+    }
+
+
+    public void showDialog(View view) {
         dialog = new MyDialog(this);
         dialog.show();
-        new android.os.Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                getWindow().setWindowAnimations(0);
-                startActivity(new Intent(MainActivity.this,SecondActivity.class));
-            }
-        },4000);
     }
-
-
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-    }
-
-
 }
 class MyDialog extends  Dialog{
 
