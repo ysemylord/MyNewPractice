@@ -31,5 +31,3 @@ fun main() {
     println("平均年利率 ${总的月利率 / 贷款期数 * 12}%")
 }
 
-class Test {
-}
