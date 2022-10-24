@@ -6,17 +6,29 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".MyApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+
         <activity
-            android:name=".GestureActivity"
+            android:name=".backround_performance.BgContainerImpromentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".backround_performance.BgContainerActivity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".GestureActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".LayoutInflaterUseActivity"
@@ -29,9 +41,7 @@
         </activity>
         <activity
             android:name=".TestMearsureActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MyLayoutInflaterFactory.LayoutInflaterActivity"
             android:exported="true">

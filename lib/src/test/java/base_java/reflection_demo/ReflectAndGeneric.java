@@ -7,7 +7,9 @@ import org.junit.Test;
 
 import java.lang.reflect.Type;
 
-
+/**
+ * 反射获取泛型信息
+ */
 class MyTypeToken extends TypeToken<ReflectAndGeneric.Response<ReflectAndGeneric.User>> {
 
 }

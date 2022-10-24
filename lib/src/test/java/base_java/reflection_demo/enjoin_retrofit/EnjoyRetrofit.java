@@ -44,7 +44,6 @@ public class EnjoyRetrofit {
             public Object invoke(Object o, Method method, Object[] objects) throws Throwable {
                 //收集信息
                 ServiceMethod serviceMethod = new ServiceMethod.Builder(EnjoyRetrofit.this, method).build();
-
                 return serviceMethod.invoke(objects);
             }
         });

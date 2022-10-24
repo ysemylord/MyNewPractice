@@ -19,5 +19,6 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     testImplementation("com.bennyhuo.java:portable-android-handler:0.3")
     implementation("androidx.fragment:fragment-ktx:1.1.0")
+    testImplementation "org.jetbrains.kotlin:kotlin-reflect:1.7.10"
 }
 
