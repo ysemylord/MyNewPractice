@@ -17,6 +17,7 @@
       <module name="My_Application.lib" target="1.8" />
       <module name="My_Application.lib.main" target="1.8" />
       <module name="My_Application.lib.test" target="1.8" />
+      <module name="My_Application.mediabrowserapplication" target="11" />
       <module name="My_Application.myaidlclient" target="11" />
       <module name="My_Application.myaidlService" target="11" />
       <module name="My_Application.myfragmentdemo" target="11" />
