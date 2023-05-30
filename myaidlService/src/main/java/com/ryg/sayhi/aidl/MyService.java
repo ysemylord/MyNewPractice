@@ -27,6 +27,11 @@ public class MyService extends Service {
     //这里实现了aidl中的抽象函数
     private final IMyService.Stub mBinder = new IMyService.Stub() {
         @Override
+        public String getStudentId(String name) throws RemoteException {
+            return name+"1222";
+        }
+
+        @Override
         public List<Student> getStudent() throws RemoteException {
             synchronized (mStudents) {
                 return mStudents;

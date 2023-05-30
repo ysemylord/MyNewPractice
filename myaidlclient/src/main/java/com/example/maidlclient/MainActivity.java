@@ -32,6 +32,11 @@ public class MainActivity extends Activity {
 //通过服务端onBind方法返回的binder对象得到IMyService的实例，得到实例就可以调用它的方法了
             mIMyService = IMyService.Stub.asInterface(service);
             try {
+                String gotStudentId = mIMyService.getStudentId("test");
+            } catch (RemoteException e) {
+                throw new RuntimeException(e);
+            }
+            try {
                 Student student = mIMyService.getStudent().get(0);
                 showDialog(student.toString());
             } catch (RemoteException e) {
