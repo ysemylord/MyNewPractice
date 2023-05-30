@@ -22,7 +22,15 @@
                 android:value="" />
         </activity>
 
-        <service android:name=".MyMediaService"
+        <service android:name=".TunerRadioService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.ttjjttjj.mymediasession.shared.MyMusicService"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.media.browse.MediaBrowserService" />
