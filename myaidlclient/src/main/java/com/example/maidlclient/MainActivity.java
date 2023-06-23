@@ -32,7 +32,15 @@ public class MainActivity extends Activity {
 //通过服务端onBind方法返回的binder对象得到IMyService的实例，得到实例就可以调用它的方法了
             mIMyService = IMyService.Stub.asInterface(service);
             try {
+
+                long startTime = System.currentTimeMillis();
                 String gotStudentId = mIMyService.getStudentId("test");
+                Log.i("client","cost time "+ (System.currentTimeMillis()-startTime));
+
+                startTime = System.currentTimeMillis();
+                mIMyService.addStudentName("jack");
+                Log.i("client","cost time "+ (System.currentTimeMillis()-startTime));
+
             } catch (RemoteException e) {
                 throw new RuntimeException(e);
             }
@@ -47,12 +55,12 @@ public class MainActivity extends Activity {
 
         @Override
         public void onBindingDied(ComponentName name) {
-           Log.i("client onBindingDied","onBindingDied");
+            Log.i("client onBindingDied", "onBindingDied");
         }
 
         @Override
         public void onNullBinding(ComponentName name) {
-            Log.i("client onNullBinding","onNullBinding");
+            Log.i("client onNullBinding", "onNullBinding");
 
         }
     };
@@ -66,13 +74,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 if (view.getId() == R.id.button1) {
-                    Intent intentService = new Intent("com.ryg.sayhi.MyService");
+                    Intent intentService = new Intent();
                     intentService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intentService.setPackage("com.example.myaidl.service");
+                    //intentService.setPackage("com.example.myaidl.service");
+                    intentService.setClassName("com.example.myaidl.service","com.ryg.sayhi.aidl.MyService");
                     MainActivity.this.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
                 }
             }
         });
+        GetServiceManagerTestKt.testBatteryService(this);
     }
 
     public void showDialog(String message) {

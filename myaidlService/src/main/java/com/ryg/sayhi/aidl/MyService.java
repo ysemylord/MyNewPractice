@@ -28,7 +28,21 @@ public class MyService extends Service {
     private final IMyService.Stub mBinder = new IMyService.Stub() {
         @Override
         public String getStudentId(String name) throws RemoteException {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             return name+"1222";
+        }
+
+        @Override
+        public void addStudentName(String name) throws RemoteException {
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
 
         @Override
@@ -38,6 +52,8 @@ public class MyService extends Service {
             }
         }
 
+    
+
         @Override
         public void addStudent(Student student) throws RemoteException {
             synchronized (mStudents) {
@@ -46,6 +62,9 @@ public class MyService extends Service {
                 }
             }
         }
+
+
+
 
         //在这里可以做权限认证，return false意味着客户端的调用就会失败，比如下面，只允许包名为com.example.test的客户端通过，
 //其他apk将无法完成调用过程
