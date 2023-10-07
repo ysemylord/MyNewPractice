@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
     private static final String ACTION_BIND_SERVICE = "com.ryg.sayhi.MyService";
     private IMyService mIMyService;
     private ServiceConnection mServiceConnection = new ServiceConnection() {
-
+        private static final String TAG ="ServiceConnection";
         @Override
         public void onServiceDisconnected(ComponentName name) {
             mIMyService = null;
@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
         public void onServiceConnected(ComponentName name, IBinder service) {
 //通过服务端onBind方法返回的binder对象得到IMyService的实例，得到实例就可以调用它的方法了
             mIMyService = IMyService.Stub.asInterface(service);
+            Log.i(TAG, "onServiceConnected service" + service);
             try {
                 String gotStudentId = mIMyService.getStudentId("test");
             } catch (RemoteException e) {
@@ -42,7 +43,7 @@ public class MainActivity extends Activity {
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
-            Log.i("client onServiceConnected", "onServiceConnected");
+            Log.i("onServiceConnected", "onServiceConnected");
         }
 
         @Override
@@ -66,10 +67,13 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 if (view.getId() == R.id.button1) {
-                    Intent intentService = new Intent("com.ryg.sayhi.MyService");
-                    intentService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intentService.setPackage("com.example.myaidl.service");
-                    MainActivity.this.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
+                    Intent intentService = new Intent();
+                    ComponentName componentName = new ComponentName(
+                            "com.example.myaidl.service",
+                            "com.ryg.sayhi.aidl.MyService");
+                    intentService.setComponent(componentName);
+                    //startService(intentService);
+                   MainActivity.this.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
                 }
             }
         });

@@ -76,6 +76,7 @@ public class MyService extends Service {
     public IBinder onBind(Intent intent) {
         Log.i(TAG, String.format("on bind,intent = %s", intent.toString()));
         displayNotificationMessage("服务已启动");
+        Log.i(TAG,"onBind mBinder "+mBinder.getClass().getSuperclass().getCanonicalName());
         return mBinder;
     }
 
