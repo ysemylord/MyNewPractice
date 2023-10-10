@@ -1,7 +1,10 @@
 package com.example.maidlclient;
 
 
+import static android.app.PendingIntent.FLAG_MUTABLE;
+
 import android.app.Activity;
+import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
@@ -31,6 +34,14 @@ public class MainActivity extends Activity {
         public void onServiceConnected(ComponentName name, IBinder service) {
 //通过服务端onBind方法返回的binder对象得到IMyService的实例，得到实例就可以调用它的方法了
             mIMyService = IMyService.Stub.asInterface(service);
+
+            try {
+                Log.i(TAG,"setCallback to service");
+                mIMyService.setCallback(new CallbackService());
+            } catch (RemoteException e) {
+                throw new RuntimeException(e);
+            }
+
             Log.i(TAG, "onServiceConnected service" + service);
             try {
                 String gotStudentId = mIMyService.getStudentId("test");
@@ -44,6 +55,50 @@ public class MainActivity extends Activity {
                 e.printStackTrace();
             }
             Log.i("onServiceConnected", "onServiceConnected");
+
+
+            Log.i("Client","______________________________");
+            try {
+                Student student = new Student();
+                student.name = "client name";
+                student.age = 10;
+                student.sex = 10;
+                student.sno = 10;
+                Log.i("Client","before getConvertName_In "+student);
+                mIMyService.getConvertName_In(student);
+                Log.i("Client","after getConvertName_In "+student);
+            } catch (RemoteException e) {
+                throw new RuntimeException(e);
+            }
+
+            Log.i("Client","______________________________");
+            try {
+                Student student = new Student();
+                student.name = "client name";
+                student.age = 10;
+                student.sex = 10;
+                student.sno = 10;
+                Log.i("Client","before getStudentInfo_Out "+student);
+                mIMyService.getStudentInfo_Out(student);
+                Log.i("Client","after getStudentInfo_Out "+student);
+            } catch (RemoteException e) {
+                throw new RuntimeException(e);
+            }
+
+            Log.i("Client","______________________________");
+            try {
+                Student student = new Student();
+                student.name = "client name";
+                student.age = 10;
+                student.sex = 10;
+                student.sno = 10;
+                Log.i("Client","before getStudengInfo_Inout "+student);
+                mIMyService.getStudengInfo_Inout(student);
+                Log.i("Client","after getStudengInfo_Inout "+student);
+            } catch (RemoteException e) {
+                throw new RuntimeException(e);
+            }
+
         }
 
         @Override
