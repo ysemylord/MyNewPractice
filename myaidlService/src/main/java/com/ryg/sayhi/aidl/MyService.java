@@ -99,6 +99,14 @@ public class MyService extends Service {
         @Override
         public void setCallback(ICallBack iCallBack) throws RemoteException {
             MyService.this.iCallBack = iCallBack;
+            //com.ryg.sayhi.aidl.ICallBack.Stub.Proxy
+            Log.i(TAG,"setCallback "+ iCallBack.getClass().getCanonicalName());
+            iCallBack.asBinder().linkToDeath(new DeathRecipient() {
+                @Override
+                public void binderDied() {
+                    Log.i(TAG,"Callback service died");
+                }
+            },0);
         }
 
 

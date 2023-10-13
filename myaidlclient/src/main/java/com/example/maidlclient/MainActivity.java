@@ -17,6 +17,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AlertDialog;
 
+import com.client_messenger.UseMessenger;
 import com.ryg.sayhi.aidl.IMyService;
 import com.ryg.sayhi.aidl.Student;
 
@@ -28,6 +29,7 @@ public class MainActivity extends Activity {
         @Override
         public void onServiceDisconnected(ComponentName name) {
             mIMyService = null;
+            Log.i(TAG,"onServiceDisconnected");
         }
 
         @Override
@@ -36,8 +38,21 @@ public class MainActivity extends Activity {
             mIMyService = IMyService.Stub.asInterface(service);
 
             try {
-                Log.i(TAG,"setCallback to service");
-                mIMyService.setCallback(new CallbackService());
+                mIMyService.asBinder().linkToDeath(new IBinder.DeathRecipient() {
+                    @Override
+                    public void binderDied() {
+                        Log.i(TAG,"MyService deed");
+                    }
+                },0);
+            } catch (RemoteException e) {
+                throw new RuntimeException(e);
+            }
+
+            try {
+                CallbackService iCallBack = new CallbackService();
+                //service com.example.maidlclient.CallbackService
+                Log.i(TAG,"setCallback to service "+ iCallBack.getClass().getCanonicalName());
+                mIMyService.setCallback(iCallBack);
             } catch (RemoteException e) {
                 throw new RuntimeException(e);
             }
@@ -151,4 +166,7 @@ public class MainActivity extends Activity {
 
     }
 
+    public void useMessenger(View view) {
+        UseMessenger.INSTANCE.bindService(this);
+    }
 }
