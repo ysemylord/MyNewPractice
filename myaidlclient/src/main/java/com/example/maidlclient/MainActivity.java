@@ -35,11 +35,29 @@ public class MainActivity extends Activity {
 
                 long startTime = System.currentTimeMillis();
                 String gotStudentId = mIMyService.getStudentId("test");
-                Log.i("client","cost time "+ (System.currentTimeMillis()-startTime));
+                Log.i("client", "cost time " + (System.currentTimeMillis() - startTime));
 
                 startTime = System.currentTimeMillis();
-                mIMyService.addStudentName("jack");
-                Log.i("client","cost time "+ (System.currentTimeMillis()-startTime));
+                long finalStartTime = startTime;
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+
+                            for (int i = 0; i < 10; i++) {
+                                mIMyService.addStudentName("jack");
+                                Log.i("client", "cost time " +
+                                        (System.currentTimeMillis() - finalStartTime));
+                            }
+
+                        } catch (RemoteException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                }).start();
+
+                //mIMyService.addStudentName("jack");
+                //Log.i("client","cost time "+ (System.currentTimeMillis()-startTime));
 
             } catch (RemoteException e) {
                 throw new RuntimeException(e);
@@ -77,7 +95,7 @@ public class MainActivity extends Activity {
                     Intent intentService = new Intent();
                     intentService.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     //intentService.setPackage("com.example.myaidl.service");
-                    intentService.setClassName("com.example.myaidl.service","com.ryg.sayhi.aidl.MyService");
+                    intentService.setClassName("com.example.myaidl.service", "com.ryg.sayhi.aidl.MyService");
                     MainActivity.this.bindService(intentService, mServiceConnection, BIND_AUTO_CREATE);
                 }
             }
