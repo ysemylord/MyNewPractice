@@ -33,8 +33,8 @@
       <module name="My_Application.testAIDL" target="11" />
       <module name="My_Application.testaidlapplication" target="17" />
       <module name="My_Application.textviewdemo" target="17" />
-      <module name="My_Application.windowdemo" target="17" />
       <module name="My_Application.wms_add_window" target="17" />
+      <module name="My_Application.wms_add_window2" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
