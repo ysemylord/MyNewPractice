@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/app/serializabledemo" />
+            <option value="$PROJECT_DIR$/contactdemo" />
             <option value="$PROJECT_DIR$/customview" />
             <option value="$PROJECT_DIR$/emptyapplication" />
             <option value="$PROJECT_DIR$/exceptionapplication" />
@@ -39,6 +40,7 @@
             <option value="$PROJECT_DIR$/textviewdemo" />
             <option value="$PROJECT_DIR$/useForKotlinLib" />
             <option value="$PROJECT_DIR$/windowdemo" />
+            <option value="$PROJECT_DIR$/wms_add_window" />
           </set>
         </option>
       </GradleProjectSettings>
