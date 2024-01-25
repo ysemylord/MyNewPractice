@@ -39,9 +39,11 @@
             <option value="$PROJECT_DIR$/testaidlapplication" />
             <option value="$PROJECT_DIR$/textviewdemo" />
             <option value="$PROJECT_DIR$/useForKotlinLib" />
+            <option value="$PROJECT_DIR$/wms_test_add_window" />
           </set>
         </option>
       </GradleProjectSettings>
     </option>
+    <option name="offlineMode" value="true" />
   </component>
 </project>
