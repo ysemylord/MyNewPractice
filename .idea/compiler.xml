@@ -12,6 +12,7 @@
       <module name="My_Application.fileproviderserverapplication" target="11" />
       <module name="My_Application.handlerapplication" target="11" />
       <module name="My_Application.hookactivityapplication" target="11" />
+      <module name="My_Application.injectmotioneventapplication" target="11" />
       <module name="My_Application.jetpackdemo" target="11" />
       <module name="My_Application.keephealth" target="11" />
       <module name="My_Application.leakcheckapplication" target="11" />
