@@ -13,29 +13,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".ImmersiveDemoActivity"
-            android:exported="true">
+            android:name=".SoftWindowDemoActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
+        <activity
+            android:name=".ImmersiveDemoActivity"
+            android:exported="true"></activity>
         <activity
             android:name=".with_screen.SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/Theme.App.Starting">
-
-        </activity>
+            android:theme="@style/Theme.App.Starting"></activity>
         <activity
             android:name=".with_screen.WhiteScreenDisablePreviewActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".with_screen.WhiteScreenWindowBackgroundMainActivity"
             android:exported="true"
             android:theme="@style/SplashTheme" />
         <activity
             android:name=".WindowManagerDemoActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".DialogWindowActivity"
             android:exported="true" />
@@ -45,7 +47,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
