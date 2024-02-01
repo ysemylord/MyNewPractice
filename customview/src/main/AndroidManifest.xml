@@ -11,33 +11,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".onclick_event_dispathcer.OnclickEventDispatchActivity"
-            android:exported="true">
+            android:name=".view_life_cycle.ViewLifecycleDemoActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".onclick_event_dispathcer.OnclickEventDispatchActivity"
+            android:exported="true">
+
         </activity>
         <activity
             android:name=".backround_performance.BgContainerImpromentActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".backround_performance.BgContainerActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".GestureActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".LayoutInflaterUseActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".TestMearsureActivity"
@@ -45,11 +43,6 @@
         <activity
             android:name=".MyLayoutInflaterFactory.LayoutInflaterActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ViewPagerShowActivity"

@@ -24,16 +24,30 @@ public class MyService extends Service {
     private NotificationManager mNotificationManager;
     private boolean mCanRun = true;
     private List<Student> mStudents = new ArrayList<Student>();
+
+
+    private  ICallBack iCallBack;
+
     //这里实现了aidl中的抽象函数
     private final IMyService.Stub mBinder = new IMyService.Stub() {
         @Override
         public String getStudentId(String name) throws RemoteException {
+<<<<<<< HEAD
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
             return name+"1222";
+=======
+            int suffix = 1;
+            if (iCallBack != null) {
+                Log.i(TAG,"invoke the callback of the client");
+                suffix = iCallBack.changeData(suffix);
+            }
+            Log.i(TAG,"getStudentId suffix is "+suffix);
+            return name + suffix;
+>>>>>>> dce5f28f8f10983107c173acb37adac0493eef10
         }
 
         @Override
@@ -63,7 +77,61 @@ public class MyService extends Service {
             }
         }
 
+<<<<<<< HEAD
 
+=======
+        /**
+         * 参数Student 只用于服务端读取它的数据
+         * @param student
+         * @return
+         * @throws RemoteException
+         */
+        @Override
+        public String getConvertName_In(Student student) throws RemoteException {
+            Log.i(TAG, "getConvertName_In before modify " + student);
+            student.name = "service converted name";
+            Log.i(TAG, "getConvertName_In after modify " + student);
+            return student.name;
+        }
+
+        /**
+         * 参数Studeng,只用于服务端写入数据
+         * @param student
+         * @throws RemoteException
+         */
+        @Override
+        public void getStudentInfo_Out(Student student) throws RemoteException {
+            Log.i(TAG, "getStudentInfo_Out before modify" + student);
+            student.name = "service name";
+            student.age = 20;
+            student.sex = 1;
+            student.sno = 1;
+            Log.i(TAG, "getStudentInfo_Out after modify" + student);
+        }
+
+        @Override
+        public void getStudengInfo_Inout(Student student) throws RemoteException {
+            Log.i(TAG, "getStudengInfo_Inout before modify" + student);
+            student.name = "service name";
+            student.age = 20;
+            student.sex = 1;
+            student.sno = 1;
+            Log.i(TAG, "getStudengInfo_Inout after modify" + student);
+        }
+
+        @Override
+        public void setCallback(ICallBack iCallBack) throws RemoteException {
+            MyService.this.iCallBack = iCallBack;
+            //com.ryg.sayhi.aidl.ICallBack.Stub.Proxy
+            Log.i(TAG,"setCallback "+ iCallBack.getClass().getCanonicalName());
+            iCallBack.asBinder().linkToDeath(new DeathRecipient() {
+                @Override
+                public void binderDied() {
+                    Log.i(TAG,"Callback service died");
+                }
+            },0);
+        }
+>>>>>>> dce5f28f8f10983107c173acb37adac0493eef10
 
 
         //在这里可以做权限认证，return false意味着客户端的调用就会失败，比如下面，只允许包名为com.example.test的客户端通过，
@@ -95,6 +163,7 @@ public class MyService extends Service {
     public IBinder onBind(Intent intent) {
         Log.i(TAG, String.format("on bind,intent = %s", intent.toString()));
         displayNotificationMessage("服务已启动");
+        Log.i(TAG, "onBind mBinder " + mBinder.getClass().getSuperclass().getCanonicalName());
         return mBinder;
     }
 

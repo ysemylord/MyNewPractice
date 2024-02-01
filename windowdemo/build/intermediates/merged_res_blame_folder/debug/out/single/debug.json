@@ -1,0 +1,142 @@
+[
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_activity_window_inset_demo.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/activity_window_inset_demo.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/anim_activity_right_out.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/anim/activity_right_out.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/drawable_good.png.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/drawable/good.png"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-pngs-15:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_activity_spalsh_screen.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/activity_spalsh_screen.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/drawable_ttt.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/drawable/ttt.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/anim_bottom_dialog_out.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/anim/bottom_dialog_out.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/anim_bottom_dialog_in.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/anim/bottom_dialog_in.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/drawable_img_welcome.png.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/drawable/img_welcome.png"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_activity_white_screen_disable_preview.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/activity_white_screen_disable_preview.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_activity_dialog_window.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/activity_dialog_window.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_activity_soft_window_demo.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/activity_soft_window_demo.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_activity_white_screen_window_background_main.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/activity_white_screen_window_background_main.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_dialog_layout.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/dialog_layout.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_activity_main.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/drawable_tooltip.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/drawable/tooltip.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_activity_second.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/activity_second.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/drawable_beat.png.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/drawable/beat.png"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_activity_window_manager_demo.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/activity_window_manager_demo.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/anim_activity_right_in.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/anim/activity_right_in.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/drawable_ic_banner_tooltip.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/drawable/ic_banner_tooltip.xml"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.dialogdemo.windowdemo-merged_res-20:/layout_view_to_window_layout.xml.flat",
+        "source": "com.example.dialogdemo.windowdemo-main-22:/layout/view_to_window_layout.xml"
+    }
+]

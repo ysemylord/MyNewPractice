@@ -7,11 +7,19 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
+<<<<<<< HEAD
             <value value="$USER_HOME$/.android/avd/Pixel_2_API_TiramisuPrivacySandbox.avd" />
+=======
+            <value value="C:\Users\yabo.xu\.android\avd\Pixel_3a_API_34_x86_64.avd" />
+>>>>>>> dce5f28f8f10983107c173acb37adac0493eef10
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
+<<<<<<< HEAD
     <timeTargetWasSelectedWithDropDown value="2024-01-31T13:48:51.969938Z" />
+=======
+    <timeTargetWasSelectedWithDropDown value="2023-10-28T04:28:09.824763600Z" />
+>>>>>>> dce5f28f8f10983107c173acb37adac0493eef10
   </component>
 </project>

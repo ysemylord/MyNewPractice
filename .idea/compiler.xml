@@ -2,38 +2,38 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.7">
-      <module name="My_Application.app" target="11" />
-      <module name="My_Application.app.serializabledemo" target="11" />
-      <module name="My_Application.aptdemoapplication" target="11" />
-      <module name="My_Application.customview" target="11" />
-      <module name="My_Application.emptyapplication" target="11" />
-      <module name="My_Application.exceptionapplication" target="11" />
-      <module name="My_Application.fileproviderclientapplication" target="11" />
-      <module name="My_Application.fileproviderserverapplication" target="11" />
-      <module name="My_Application.handlerapplication" target="11" />
-      <module name="My_Application.hookactivityapplication" target="11" />
-      <module name="My_Application.injectmotioneventapplication" target="11" />
-      <module name="My_Application.jetpackdemo" target="11" />
-      <module name="My_Application.keephealth" target="11" />
-      <module name="My_Application.leakcheckapplication" target="11" />
+      <module name="My_Application.app" target="17" />
+      <module name="My_Application.app.serializabledemo" target="17" />
+      <module name="My_Application.contactdemo" target="17" />
+      <module name="My_Application.customview" target="17" />
+      <module name="My_Application.emptyapplication" target="17" />
+      <module name="My_Application.exceptionapplication" target="17" />
+      <module name="My_Application.fileproviderclientapplication" target="17" />
+      <module name="My_Application.fileproviderserverapplication" target="17" />
+      <module name="My_Application.handlerapplication" target="17" />
+      <module name="My_Application.hookactivityapplication" target="17" />
+      <module name="My_Application.injectmotioneventapplication" target="17" />
+      <module name="My_Application.jetpackdemo" target="17" />
+      <module name="My_Application.keephealth" target="17" />
+      <module name="My_Application.leakcheckapplication" target="17" />
       <module name="My_Application.lib" target="1.8" />
       <module name="My_Application.lib.main" target="1.8" />
       <module name="My_Application.lib.test" target="1.8" />
-      <module name="My_Application.mediabrowserapplication" target="11" />
-      <module name="My_Application.myaidlclient" target="11" />
-      <module name="My_Application.myaidlService" target="11" />
-      <module name="My_Application.myfragmentdemo" target="11" />
-      <module name="My_Application.myfragmentdemo2" target="11" />
-      <module name="My_Application.networkapplication" target="11" />
-      <module name="My_Application.newreflectionapplication" target="11" />
-      <module name="My_Application.otherapplication" target="11" />
-      <module name="My_Application.screeninfodemo" target="11" />
-      <module name="My_Application.servicedemoapplication" target="11" />
-      <module name="My_Application.surfaceapplication" target="11" />
-      <module name="My_Application.testAIDL" target="11" />
-      <module name="My_Application.testaidlapplication" target="11" />
-      <module name="My_Application.textviewdemo" target="11" />
-      <module name="My_Application.windowdemo" target="11" />
+      <module name="My_Application.mediabrowserapplication" target="17" />
+      <module name="My_Application.myaidlclient" target="17" />
+      <module name="My_Application.myaidlService" target="17" />
+      <module name="My_Application.myfragmentdemo" target="17" />
+      <module name="My_Application.myfragmentdemo2" target="17" />
+      <module name="My_Application.networkapplication" target="17" />
+      <module name="My_Application.newreflectionapplication" target="17" />
+      <module name="My_Application.otherapplication" target="17" />
+      <module name="My_Application.screeninfodemo" target="17" />
+      <module name="My_Application.servicedemoapplication" target="17" />
+      <module name="My_Application.servicemanagerdemo" target="17" />
+      <module name="My_Application.surfaceapplication" target="17" />
+      <module name="My_Application.testaidlapplication" target="17" />
+      <module name="My_Application.textviewdemo" target="17" />
+      <module name="My_Application.wms_test_add_window" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

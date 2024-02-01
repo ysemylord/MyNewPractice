@@ -3,7 +3,6 @@ package com.reflect_test.generic;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import jdk.nashorn.internal.parser.Token;
 
 public class Test {
     static class Data {
